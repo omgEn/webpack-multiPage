@@ -1,0 +1,64 @@
+Arguments: 
+  E:\software\nodejs\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add bootstrap
+
+PATH: 
+  C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;E:\software\Git\cmd;E:\software\nodejs\;E:\software\TortoiseSVN\bin;C:\windows\System32\WindowsPowerShell\v1.0\;E:\software\MongoDB\bin;C:\Users\Administrator\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37-32\;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Users\Administrator\AppData\Roaming\npm;E:\software\Microsoft VS Code\bin;E:\software\Flutter\flutter\bin;
+
+Yarn version: 
+  1.22.0
+
+Node version: 
+  12.10.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: write EIO
+      at afterWriteDispatched (internal/stream_base_commons.js:150:25)
+      at writeGeneric (internal/stream_base_commons.js:141:3)
+      at WriteStream.Socket._writeGeneric (net.js:768:11)
+      at WriteStream.Socket._write (net.js:780:8)
+      at doWrite (_stream_writable.js:428:12)
+      at writeOrBuffer (_stream_writable.js:412:5)
+      at WriteStream.Writable.write (_stream_writable.js:302:11)
+      at writeOnNthLine (C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:49677:12)
+      at Spinner.render (C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:97408:48)
+      at Spinner.start (C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:97395:10)
+
+npm manifest: 
+  {
+    "name": "webpack-multipage",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build": "webpack --config webpack.config.js",
+      "dev": "webpack-dev-server"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "@babel/core": "^7.16.7",
+      "@babel/preset-env": "^7.16.7",
+      "babel-loader": "^8.2.3",
+      "clean-webpack-plugin": "^4.0.0",
+      "copy-webpack-plugin": "^6.4.1",
+      "css-loader": "^6.7.0",
+      "html-loader": "^3.0.1",
+      "html-webpack-plugin": "^4.5.2",
+      "style-loader": "^3.3.1",
+      "webpack": "^4.46.0",
+      "webpack-cli": "^4.9.1",
+      "webpack-dev-middleware": "^5.3.1",
+      "webpack-dev-server": "^4.7.2"
+    },
+    "dependencies": {}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
