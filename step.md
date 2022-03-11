@@ -29,3 +29,10 @@ npx webpack // 直接打包命令
 
 安装 code run 插件
 // tree-shaking 把没用到的代码 自动删除掉
+
+npm i tapable
+
+#### loader
+loader 加载顺序：从右到左，从下到上
+enforce: pre:在前面的，post: 在后面，normal:
+loader的顺序：pre+normal+inline+post

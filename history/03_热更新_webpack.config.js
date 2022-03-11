@@ -1,9 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-// 1.cleanWebpackPlugin -- 清除webpack
-// 2.copyWebpackPlugin --
-// 3.bannerPlugin 内置
 module.exports = {
   mode: 'production',
   entry: {

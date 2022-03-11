@@ -2,42 +2,15 @@ let path = require('path');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 let webpack = require('webpack');
 
+// happypack 实现多线程打包
+let Happypack = require('happypack');
+
 module.exports = {
-  mode: 'production',
-  entry: {
-    index: './src/index.js',
-    other: './src/other.js',
-  },
-  output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
-  },
+  mode: 'development',
+  entry: './src/index.js',
   devServer: {
     port: 3000,
     open: true,
-  },
-  // 旧版本是用 splitChunks
-  optimization: {
-    // 分割代码块---只有多页应用需要，单页应用不需要
-    splitChunks: {
-      // 缓存组
-      cacheGroups: {
-        commons: {
-          chunks: 'initial',
-          minSize: 0,
-          minChunks: 2,
-        },
-        // 抽离
-        vendor: {
-          // 优先级
-          // priority: 1,
-          test: /node_modules/,
-          chunks: 'initial',
-          minSize: 0,
-          minChunks: 2,
-        },
-      },
-    },
   },
   module: {
     // 不需要去解析jquery中的依赖关系
@@ -48,19 +21,34 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         include: path.resolve('src'),
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env', '@babel/preset-react'],
-        },
+        use: 'Happypack/loader?id=js',
       },
       {
         test: /\.css$/,
-        loader: ['style-loader', 'css-loader'],
+        use: 'Happypack/loader?id=css',
       },
     ],
   },
-
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
   plugins: [
+    new Happypack({
+      id: 'css',
+      use: ['style-loader', 'css-loader'],
+    }),
+    new Happypack({
+      id: 'js',
+      use: [
+        {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
+      ],
+    }),
     // moment的语言包不被引入，减小包的面积
     new webpack.IgnorePlugin(/\.\/locale/, /moment/),
     new HtmlWebpackPlugin({

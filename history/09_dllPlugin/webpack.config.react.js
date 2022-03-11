@@ -1,8 +1,6 @@
 // 先独立的把react和react-dom打包好，
 // 在开发的时候引入 打包好的react，react-dom，打包好后也不会更改
 
-// splitChunk
-
 // 把当前文件定义成动态链接库ddl
 
 let path = require('path');

@@ -4,9 +4,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
-// 1.cleanWebpackPlugin -- 清除webpack
-// 2.CopyWebpackPlugin --
-// 3.bannerPlugin 内置
 module.exports = {
   mode: 'production',
   entry: {
@@ -61,6 +58,6 @@ module.exports = {
       patterns: [{ from: './doc', to: 'doc' }],
     }),
     // 声明版权信息
-    new webpack.BannerPlugin('make 2019 by zzz'),
+    new webpack.BannerPlugin('make 2022 by zzz'),
   ],
 };

@@ -6,9 +6,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
-// 1.cleanWebpackPlugin -- 清除webpack
-// 2.CopyWebpackPlugin --
-// 3.bannerPlugin 内置
 module.exports = {
   mode: 'production',
   entry: './src/index.js',

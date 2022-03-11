@@ -39,6 +39,6 @@ module.exports = {
       patterns: [{ from: './doc', to: 'doc' }],
     }),
     // 声明版权信息
-    new webpack.BannerPlugin('make 2019 by zzz'),
+    new webpack.BannerPlugin('make 2022 by zzz'),
   ],
 };
